@@ -1,0 +1,53 @@
+ESP32MC
+Copyright (C) 2026 ESP32MC contributors
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+======================================================================
+第三方说明 / Third-party notices
+======================================================================
+
+1. 灵感与参考 / Inspiration and reference
+----------------------------------------------------------------------
+本项目的协议实现思路、包流程组织方式，参考了以下开源工作：
+
+  * bareiron —— Go 语言实现的轻量 Minecraft Java 版服务端
+  * GYGKHD   —— 相关的 Minecraft 协议 / 服务端实践
+
+本项目并未直接复制上述项目的代码：全部协议处理均针对 ESP32 的内存与
+算力约束，以 C++（Arduino 框架）重新实现。若后续引入上述项目的任何源
+码片段，必须在此处补充其版权声明与许可证文本。
+
+2. 协议与注册表数据的来源 / Protocol and registry data
+----------------------------------------------------------------------
+本项目不包含、也不再分发任何 Mojang 的资源文件。开发期用于核对协议字段、
+包 id、方块 state id 与物品注册表 id 的客户端 jar（26.1.2）仅在本机用于
+静态分析（javap 反汇编）与 Mojang 官方数据生成器导出（--reports），
+其产物仅作为对照表写入本项目自有的映射数组，不随仓库分发。
+
+  * Minecraft 是 Mojang Studios / Microsoft 的商标与作品。
+  * 本项目与 Mojang Studios、Microsoft 无任何隶属或背书关系。
+
+3. 运行时依赖 / Runtime dependencies
+----------------------------------------------------------------------
+  * Arduino-ESP32 core（LGPL-2.1）
+  * ESP-IDF 组件（Apache-2.0 等，见各组件许可证）
+  * SPIFFS / WiFi / WebServer 等库随 Arduino-ESP32 core 分发
+
+4. 修改说明 / Modifications
+----------------------------------------------------------------------
+本项目为独立实现而非上游项目的分支，故不适用 GPLv3 第 5 条 a) 的
+"修改版本标注"；若你基于本仓库继续分发，请在衍生作品中保留本 NOTICE
+与 LICENSE，并在显著位置说明你所做的修改及日期。
